@@ -35,10 +35,10 @@ class TaskController {
         self.tasks = tasks
     }
     
-    func update(task: Task, name: String, notes: String?, date: Date = Date()) {
+    func update(task: Task, name: String, notes: String?, dueDate: Date?) {
         task.name = name
         task.notes = notes
-        task.dueDate = date
+        task.dueDate = dueDate
         CoreDataStack.saveContext()
     }
     

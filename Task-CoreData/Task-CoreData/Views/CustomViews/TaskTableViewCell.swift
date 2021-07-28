@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol TaskCompletionDelegate: AnyObject {
-    func taskCellButtonTapped(_ sender: TaskTableViewCell)
+protocol TaskCellCompletionDelegate: AnyObject {
+    func taskCellButtonTapped(_ sender: UITableViewCell)
 }
 
 class TaskTableViewCell: UITableViewCell {
@@ -25,14 +25,14 @@ class TaskTableViewCell: UITableViewCell {
         }
     }
     
-    weak var delegate: TaskCompletionDelegate?
+    weak var delegate: TaskCellCompletionDelegate?
     
     // MARK: - Helper methods
     
     func updateCellViews() {
         guard let task = task else { return }
         taskNameLabel.text = task.name
-        dateLabel.text = "\(task.dueDate ?? Date())"
+        dateLabel.text = task.dueDate?.dateAsString()
         
         let imageName = task.isComplete ? "square.fill" : "square"
         completionButton.setImage(UIImage(systemName: imageName), for: .normal)

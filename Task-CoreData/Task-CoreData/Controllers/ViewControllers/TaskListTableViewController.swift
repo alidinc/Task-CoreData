@@ -27,7 +27,6 @@ class TaskListTableViewController: UITableViewController {
                   let destination = segue.destination as? TaskDetailViewController else { return }
             let taskToSend = TaskController.shared.tasks[indexPath.row]
             destination.task = taskToSend
-            destination.delegate = self
         }
     }
 }
@@ -62,24 +61,16 @@ extension TaskListTableViewController {
     }
 }
 
-extension TaskListTableViewController: TaskCompletionDelegate {
+extension TaskListTableViewController: TaskCellCompletionDelegate {
     
-    func taskCellButtonTapped(_ sender: TaskTableViewCell) {
+    func taskCellButtonTapped(_ sender: UITableViewCell) {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         let task = TaskController.shared.tasks[indexPath.row]
         
-        TaskController.shared.toggleIsComplete(task: task)
-        sender.updateCellViews()
+        if let taskCell = sender as? TaskTableViewCell {
+            TaskController.shared.toggleIsComplete(task: task)
+            taskCell.updateCellViews()
+        }
     }
 }
 
-
-extension TaskListTableViewController: UpdateTableViewDelegate {
-    func updateViewFor(task: Task, name: String, dueDate: Date, notes: String) {
-        TaskController.shared.update(task: task, name: name, notes: notes, date: dueDate)
-        tableView.reloadData()
-    }
-    
-    
-    
-}

@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol UpdateTableViewDelegate: AnyObject {
-    func updateViewFor(task: Task, name: String, dueDate: Date, notes: String)
-}
+//protocol UpdateTableViewDelegate: AnyObject {
+//    func updateCellViewFor(task: Task, name: String, dueDate: Date, notes: String)
+//}
 
 class TaskDetailViewController: UIViewController {
 
@@ -23,14 +23,11 @@ class TaskDetailViewController: UIViewController {
     var task: Task?
     var date: Date?
     
-    weak var delegate: UpdateTableViewDelegate?
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDetailViews()
     }
-
     
     // MARK: - Helper methods
     func updateDetailViews() {
@@ -47,7 +44,7 @@ class TaskDetailViewController: UIViewController {
               let notes = taskNotesTextView.text, !notes.isEmpty else { return }
         
         if let task = task {
-            delegate?.updateViewFor(task: task, name: name, dueDate: date ?? Date(), notes: notes)
+            TaskController.shared.update(task: task, name: name, notes: notes, dueDate: date ?? Date())
         } else {
             TaskController.shared.createTaskWith(name: name, notes: notes, dueDate: taskDueDatePicker.date)
         }
@@ -55,6 +52,12 @@ class TaskDetailViewController: UIViewController {
     }
     
     @IBAction func dueDatePickerDateChanged(_ sender: Any) {
+        
+        guard let name = taskNameTextField.text, !name.isEmpty,
+              let notes = taskNotesTextView.text, !notes.isEmpty,
+              let task = task else { return }
+        
         self.date = taskDueDatePicker.date
+        TaskController.shared.update(task: task, name: name, notes: notes, dueDate: date ?? Date())
     }
 }
