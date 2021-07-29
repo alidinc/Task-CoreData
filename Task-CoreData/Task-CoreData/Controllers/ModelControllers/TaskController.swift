@@ -12,6 +12,8 @@ class TaskController {
     // MARK: - Properties
     static let shared = TaskController()
     
+    let taskScheduler = TasksScheduler()
+    
     var tasks = [Task]()
     
     private lazy var fetchRequest: NSFetchRequest<Task> = {
@@ -28,6 +30,8 @@ class TaskController {
         let newTask = Task(name: name, notes: notes, dueDate: dueDate)
         tasks.append(newTask)
         CoreDataStack.saveContext()
+        
+        taskScheduler.scheduleNotification(for: newTask)
     }
     
     func fetchTasks() {
@@ -40,11 +44,19 @@ class TaskController {
         task.notes = notes
         task.dueDate = dueDate
         CoreDataStack.saveContext()
+        
+        if !task.isComplete {
+            taskScheduler.scheduleNotification(for: task)
+        }
     }
     
     func toggleIsComplete(task: Task) {
         task.isComplete.toggle()
         CoreDataStack.saveContext()
+        
+        if task.isComplete {
+            taskScheduler.clearNotifications(for: task)
+        }
     }
     
     func delete(task: Task) {

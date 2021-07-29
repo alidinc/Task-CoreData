@@ -119,8 +119,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="fSC-P3-ALN">
-                                <rect key="frame" x="287" y="284" width="107" height="39"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="fSC-P3-ALN">
+                                <rect key="frame" x="172" y="284" width="222" height="39"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="ukO-sf-kTs"/>
@@ -143,7 +143,7 @@
                             <constraint firstItem="Tqt-2G-XeY" firstAttribute="trailing" secondItem="ftd-qU-M6e" secondAttribute="trailingMargin" id="MiJ-aI-Hbp"/>
                             <constraint firstItem="ETo-Vn-kpv" firstAttribute="trailing" secondItem="Sp0-mi-5ct" secondAttribute="trailing" constant="294" id="NsC-pp-NWn"/>
                             <constraint firstItem="xlw-n5-J50" firstAttribute="top" secondItem="fSC-P3-ALN" secondAttribute="bottom" constant="88" id="PfH-Ma-Ffl"/>
-                            <constraint firstItem="fSC-P3-ALN" firstAttribute="leading" secondItem="ETo-Vn-kpv" secondAttribute="leading" constant="287" id="Ur3-SQ-ALS"/>
+                            <constraint firstItem="fSC-P3-ALN" firstAttribute="leading" secondItem="ETo-Vn-kpv" secondAttribute="leading" constant="172" id="Ur3-SQ-ALS"/>
                             <constraint firstItem="ETo-Vn-kpv" firstAttribute="bottom" secondItem="xlw-n5-J50" secondAttribute="bottom" constant="182" id="c8c-lM-mxK"/>
                             <constraint firstItem="fSC-P3-ALN" firstAttribute="top" secondItem="Tqt-2G-XeY" secondAttribute="bottom" constant="64" id="jyc-zs-CK7"/>
                             <constraint firstItem="xlw-n5-J50" firstAttribute="top" secondItem="0da-Ib-HrK" secondAttribute="bottom" constant="8" id="mxn-P2-6TA"/>

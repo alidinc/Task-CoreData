@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA6BD42026B20F1700FDED66 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6BD41F26B20F1700FDED66 /* NotificationsManager.swift */; };
+		DA6BD42226B210B500FDED66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6BD42126B210B500FDED66 /* Constants.swift */; };
+		DA6BD42426B21D9800FDED66 /* TasksScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6BD42326B21D9800FDED66 /* TasksScheduler.swift */; };
 		DA8EEF3126B09DFF0088C71D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEF3026B09DFF0088C71D /* AppDelegate.swift */; };
 		DA8EEF3326B09DFF0088C71D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEF3226B09DFF0088C71D /* SceneDelegate.swift */; };
 		DA8EEF3826B09DFF0088C71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8EEF3626B09DFF0088C71D /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA6BD41F26B20F1700FDED66 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		DA6BD42126B210B500FDED66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA6BD42326B21D9800FDED66 /* TasksScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScheduler.swift; sourceTree = "<group>"; };
 		DA8EEF2D26B09DFF0088C71D /* Task-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8EEF3026B09DFF0088C71D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA8EEF3226B09DFF0088C71D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,10 +76,10 @@
 		DA8EEF2F26B09DFF0088C71D /* Task-CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				DA8EEF5B26B0D82C0088C71D /* Helpers+Extensions */,
 				DA8EEF4D26B09EF40088C71D /* CoreData */,
 				DA8EEF4A26B09EE30088C71D /* Controllers */,
 				DA8EEF4826B09EC60088C71D /* Views */,
+				DA8EEF5B26B0D82C0088C71D /* Helpers+Extensions */,
 				DA8EEF4726B09EA80088C71D /* Resources */,
 			);
 			path = "Task-CoreData";
@@ -155,7 +161,10 @@
 		DA8EEF5B26B0D82C0088C71D /* Helpers+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DA6BD42126B210B500FDED66 /* Constants.swift */,
 				DA8EEF5C26B0D83E0088C71D /* Date+Extension.swift */,
+				DA6BD41F26B20F1700FDED66 /* NotificationsManager.swift */,
+				DA6BD42326B21D9800FDED66 /* TasksScheduler.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -234,12 +243,15 @@
 				DA8EEF3126B09DFF0088C71D /* AppDelegate.swift in Sources */,
 				DA8EEF5A26B0A7620088C71D /* TaskTableViewCell.swift in Sources */,
 				DA8EEF3326B09DFF0088C71D /* SceneDelegate.swift in Sources */,
+				DA6BD42026B20F1700FDED66 /* NotificationsManager.swift in Sources */,
 				DA8EEF5526B0A2F30088C71D /* Task+Convenience.swift in Sources */,
 				DA8EEF5D26B0D83E0088C71D /* Date+Extension.swift in Sources */,
 				DA8EEF3B26B09DFF0088C71D /* Task_CoreData.xcdatamodeld in Sources */,
+				DA6BD42426B21D9800FDED66 /* TasksScheduler.swift in Sources */,
 				DA8EEF4F26B09F040088C71D /* CoreDataStack.swift in Sources */,
 				DA8EEF5726B0A4970088C71D /* TaskController.swift in Sources */,
 				DA8EEF5126B09F3B0088C71D /* TaskListTableViewController.swift in Sources */,
+				DA6BD42226B210B500FDED66 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

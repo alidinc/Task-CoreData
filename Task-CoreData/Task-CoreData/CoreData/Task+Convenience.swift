@@ -13,6 +13,7 @@ extension Task {
     convenience init(name: String, notes: String?, dueDate: Date?, isComplete: Bool = false, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.name = name
+        self.id = UUID()
         self.notes = notes
         self.dueDate = dueDate
         self.isComplete = isComplete
